@@ -26,3 +26,25 @@ total_summary
 # create a lot summary
 lot_summary <- suspension_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI), .groups='keep')
 lot_summary
+
+## Deliverable 3
+# sample table
+sample_table <- suspension_table %>% sample_n(50)
+head(sample_table)
+
+# t-test for sample normality
+t.test(sample_table$PSI, mu=1500)
+
+# set up lots
+lot_1 <- suspension_table %>% filter(Manufacturing_Lot=="Lot1")
+lot_2 <- suspension_table %>% filter(Manufacturing_Lot=="Lot2")
+lot_3 <- suspension_table %>% filter(Manufacturing_Lot=="Lot3")
+
+# Lot 1 t-test
+t.test(lot_1$PSI, mu=1500)
+
+# Lot 2 t-test
+t.test(lot_2$PSI, mu=1500)
+
+# Lot 3 t-test
+t.test(lot_3$PSI, mu=1500)
