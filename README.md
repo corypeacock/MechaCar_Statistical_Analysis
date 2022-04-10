@@ -20,7 +20,7 @@ While this provides the model and coefficients for each variable. We need the fo
 
   summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=base_table))  
 
-![Multiple_linear_regression_model](images/Multiple_linear_regression_model.png)
+![Multiple_linear_regression_model](images/multiple_linear_regression_model.png)
 
 #### Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?  
 The two variables that appeared to have a significant impact on MPG were vehicle_length and ground_clearance. This is due to their respective p-values each being lower than 0.05. The p-value of vehicle_length was 2.60e-12. The p-value of ground_clearance was 5.21e-08.  
