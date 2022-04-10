@@ -2,23 +2,30 @@
 BC Mod15  
 
 ## Overview
-lorem ipsum  
+The overall process in this analysis is to examine the MechaCar statistically, looking at miles per gallon and suspension coils. Such analysis should allow modification of the MechaCar to be made in order to improve performance. Ultimately, the intension is to improve the MechaCar against all competition in the field.  
 
 ### Resources
 Programming Language(s): R  
 Data: MechaCar_mpg.csv, Suspension_Coil.csv  
 
 ## Results
-lorem ipsum  
+The following results were considered in the analysis of MechCar:  
+* A linear regression to predict miles per gallon  
+* Summary statistics on suspension coils  
+* T-Tests on suspension coils  
 
 ### Linear Regression to Predict MPG
 In order to determine the significance of variables predicting Miles Per Gallon (MPG), a multiple linear regression model was run in R using the following line of code:  
 
-  lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=base_table)  
+```
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=base_table)
+```  
 
 While this provides the model and coefficients for each variable. We need the following code to provide the information to answer some relevant questions:  
 
-  summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=base_table))  
+```
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=base_table))
+```  
 
 ![Multiple_linear_regression_model](images/multiple_linear_regression_model.png)  
 
@@ -60,5 +67,29 @@ The p-vale for the Lot 2 subset of the population was 0.607. This is above our s
 
 The p-vale for the Lot 3 subset of the population was 0.042. This is below our significance level of 0.05. Therefore, there is sufficient evidence to reject the null hypothesis. The two populations are not statistically similar to one another.  
 
-## LOREM IPSUM
-lorem ipsum
+## Study Design: MechaCar vs Competition  
+As states in the Overview section above, the intent of this study is to provide actionable analysis of the MechaCar in order to improve the MechaCar against the competition. Further study should conform to the following points and questions.  
+
+AutosRUs' new car, the MechaCar, is attempting to occupy the urban-eco-warrior niche in the market. Therefore, while there are many viable questions that could guide our research, two are of particular interest: fuel-efficiency and safety ratings.
+
+The questions should guide our quantitative research are similar, so we will focus here only on fuel efficiency.
+
+```
+"Are there statistically significant differences in the average city fuel efficiency between MechaCar and its competitors?"
+```  
+
+Our hypotheses:  
+
+```
+Null hypothesis: There is no difference between MechaCar's average city fuel efficiency and its competitors.
+
+Alternative hypothesis: There is a difference between MechaCar's average city fuel efficiency and its competitors.
+```  
+
+The statistical test that would inform our analysis would be a two-sample t-test. This is due to the data (below), the independent variable being dichotomous (Sample A-MechaCar vs Sample B-competition), and the dependent variable being continuous (average city MPG).  
+
+The data used would be:
+* a large data set of MechaCar's city fuel efficiency for Sample A,  
+* a large data set of the competition's city fuel efficiency for Sample B.  
+
+A similar study could be conducted on safety ratings. In such a case the above study would be repeated with safety ratings replacing city MPG as the dependent variable in question.  
